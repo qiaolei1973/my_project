@@ -9,7 +9,7 @@ class Product1 extends React.Component {
     render() {
         var createLine = function(item,index){
             item.className = index % 2 === 0 ? 'right line-text' : 'left line-text';
-            item.background = index % 2 === 0 ? {background:'#FFF'} : {background:'red'};
+            item.background = index % 2 === 0 ? {background:'blue'} : {background:'red'};
             return <Line data={item} key={item.key}/>
         }
         console.log(Static.Product1.items)
