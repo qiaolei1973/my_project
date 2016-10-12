@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './login/Login'
 //新闻动态
 class Footer extends React.Component {
     constructor(prop) {
@@ -23,6 +24,7 @@ class Footer extends React.Component {
                                 <li><span>帮助与支持</span></li>
                                 <li><a href="support.html">支持中心</a></li>
                                 <li><a href="faq-home.html">常见问题</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#signinModal">管理员登陆</a></li>
                             </ul>
                             <ul className="partners">
                                 <li><span>互动关注</span></li>
@@ -36,7 +38,7 @@ class Footer extends React.Component {
                         </div>
                     </div>
                 </div>
-
+                <Login/>
 
 
             </section>
