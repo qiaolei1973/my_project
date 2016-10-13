@@ -4,7 +4,11 @@ body {
     color: #5a5a5a;
 }
 
-
+ul li,ol li{
+    padding: 0;
+    list-style: none;
+    margin:0;
+}
 /* 轮播广告 */
 
 .carousel {
@@ -196,6 +200,51 @@ body {
         img{
             width: 300px;
             height: 360px;
+        }
+    }
+}
+
+.footer{
+
+    width: 100%;
+    font-family: "Microsoft YaHei", sans-serif;
+    padding: 90px 0 0;
+    background: rgb(247,247,247);
+    .footer-wrapper{
+        position: relative;
+        margin: 0 auto;
+        max-width: 960px;
+        min-width: 320px;
+        .link{
+            padding:0 0 60px;
+            width: 100%;
+            display: table;
+            ul.about,ul.support,ul.partners{
+                display: table-cell;
+                width: 33.33%;
+                li{
+                    span{
+                        font-size: 24px;
+                        color:rgb(161,161,161);
+                        margin: 0 0 10px 0;
+                    }
+                    a{
+                        width:80%;
+                        line-height: 40px;
+                        font-size: 16px;
+                        color: rgb(68,68,68);
+                        text-decoration: none;
+                        transition: all 0.3 ease-in;
+                    }
+                }
+            }
+        }
+        .copyright{
+            position: relative;
+            padding: 25px 0;
+            width:100%;
+            font-size: 16px;
+            color: red;
         }
     }
 }

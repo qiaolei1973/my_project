@@ -9,7 +9,7 @@ class Footer extends React.Component {
         const data = this.props.data;
         return (
             <section>
-                <div className='footer clear' style={{background:'yellow'}}>
+                <div className='footer clear'>
                     <div className='footer-wrapper'>
                         <div className='link'>
                             <ul className='about'>
@@ -34,7 +34,7 @@ class Footer extends React.Component {
                             </ul>
                         </div>
                         <div className="copyright top-line">
-                            <p>© 2015-2016  福建风灵创景科技有限公司Felink.com 版权所有 闽ICP备15026663号-1 客服热线 0591-38129191</p>
+                            <p>© 2015-2016  xx有限公司</p>
                         </div>
                     </div>
                 </div>
