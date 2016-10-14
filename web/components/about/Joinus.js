@@ -3,8 +3,9 @@ import React from 'react';
 import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
+import JoinLine from '../line/JoinLine';
 //产品1
-class Product1 extends React.Component {
+class Joinus extends React.Component {
     constructor(prop) {
         super(prop);
     }
@@ -12,13 +13,11 @@ class Product1 extends React.Component {
         return (
             <div>
                 <NavBar />
-                <section>
-                    <div>hello world</div>
-                </section>
+                    <JoinLine/>
                 <Footer />
             </div>
         )
     }
 }
 
-module.exports = Product1;
+module.exports = Joinus;

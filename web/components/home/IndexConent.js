@@ -2,9 +2,9 @@ import Line from '../Line';
 import React from 'react';
 import Static from '../../Static/Static';
 import NavBar from '../NavBar';
-import Footer from '../Footer';
+import Footer from '../Footer'
 //产品1
-class Product1 extends React.Component {
+class IndexConent extends React.Component {
     constructor(prop) {
         super(prop);
     }
@@ -17,14 +17,12 @@ class Product1 extends React.Component {
         console.log(Static.Product1.items)
         return (
             <div>
-            <NavBar/>
             <section className='item-launcher'>
                 {Static.Product1.items.map(createLine)}
             </section>
-            <Footer/>
             </div>
         )
     }
 }
 
-module.exports = Product1;
+module.exports = IndexConent;

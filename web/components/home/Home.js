@@ -1,9 +1,9 @@
 import React from 'react';
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 import Carousel from './Carousel'
 import Footer from '../Footer'
 import Static from '../../Static/Static';
-import Product1 from '../Product/Product1';
+import IndexConent from './IndexConent';
 
 //起始页
 class Home extends React.Component {
@@ -16,7 +16,7 @@ class Home extends React.Component {
             <div>
                 <NavBar/>
                 <Carousel/>
-                <Product1/>
+                <IndexConent/>
                 <Footer data={Static.Footer}/>
             </div>
         )

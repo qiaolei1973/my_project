@@ -14,16 +14,15 @@ class Footer extends React.Component {
                         <div className='link'>
                             <ul className='about'>
                                 <li><span>关于我们</span></li>
-                                <li><a href="about.html">公司介绍</a></li>
-                                <li><a href="policy.html">隐私条款</a></li>
-                                <li><a href="disclaimer.html">免责声明</a></li>
-                                <li><a href="joinus.html">加入我们</a></li>
-                                <li><a href="../indulged/">防沉迷，家长监护</a></li>
+                                <li><a href="about">公司介绍</a></li>
+                                <li><a href="policy">隐私条款</a></li>
+                                <li><a href="disclaimer">免责声明</a></li>
+                                <li><a href="joinus">加入我们</a></li>
                             </ul>
                             <ul className="support">
                                 <li><span>帮助与支持</span></li>
-                                <li><a href="support.html">支持中心</a></li>
-                                <li><a href="faq-home.html">常见问题</a></li>
+                                <li><a href="support">支持中心</a></li>
+                                <li><a href="faq-home">常见问题</a></li>
                                 <li><a href="#" data-toggle="modal" data-target="#signinModal">管理员登陆</a></li>
                             </ul>
                             <ul className="partners">

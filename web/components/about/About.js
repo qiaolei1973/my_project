@@ -4,21 +4,21 @@ import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
 //产品1
-class Product1 extends React.Component {
+class About extends React.Component {
     constructor(prop) {
         super(prop);
     }
     render() {
         return (
             <div>
-                <NavBar />
-                <section>
-                    <div>hello world</div>
-                </section>
-                <Footer />
+            <NavBar/>
+            <section>
+               <div>hello world</div>
+            </section>
+            <Footer/>
             </div>
         )
     }
 }
 
-module.exports = Product1;
+module.exports = About;

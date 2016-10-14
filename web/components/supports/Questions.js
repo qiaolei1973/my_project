@@ -4,7 +4,7 @@ import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
 //产品1
-class Product1 extends React.Component {
+class Questions extends React.Component {
     constructor(prop) {
         super(prop);
     }
@@ -21,4 +21,4 @@ class Product1 extends React.Component {
     }
 }
 
-module.exports = Product1;
+module.exports = Questions;
