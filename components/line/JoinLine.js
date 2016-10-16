@@ -29,12 +29,14 @@ class JoinLine extends React.Component {
             return (
                 <div className='full-line' key={key} style={background}>
                     <div className='line'>
-                        <div className='line-text'>
-                            <h4>{data.job}</h4>
-                            <h4>岗位职责：</h4>
-                            {responsibilitys.map(createRes_p)}
-                            <h4>任职要求：</h4>
-                            {responsibilitys.map(createNeed_p)}
+                        <div className='line-joinus'>
+                            <div className=''>
+                                <h4>{data.job}</h4>
+                                <h4>岗位职责：</h4>
+                                {responsibilitys.map(createRes_p)}
+                                <h4>任职要求：</h4>
+                                {responsibilitys.map(createNeed_p)}
+                            </div>
                         </div>
                     </div>
                 </div>

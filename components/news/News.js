@@ -3,22 +3,24 @@ import React from 'react';
 import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
+import NewsCard from './NewsCard';
 //产品1
-class About extends React.Component {
+class News extends React.Component {
     constructor(prop) {
         super(prop);
     }
     render() {
+        const data = Static.Summary.NewsCard;
         return (
             <div>
-            <NavBar/>
-            <section>
-               <div>hello world</div>
-            </section>
-            <Footer/>
+                <NavBar />
+                <section>
+                    <NewsCard data={data}/>
+                </section>
+                <Footer />
             </div>
         )
     }
 }
 
-module.exports = About;
+module.exports = News;
