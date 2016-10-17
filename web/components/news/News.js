@@ -4,22 +4,16 @@ import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
 //产品1
-class About extends React.Component {
+class News extends React.Component {
     constructor(prop) {
         super(prop);
     }
     render() {
-        const data = Static.About;
         return (
             <div>
                 <NavBar />
                 <section>
-                    <div className='line about'>
-                        <span className='about-title'>
-                            北京xx公司
-                        </span>
-                        <p>{data.article}</p>
-                    </div>
+                    <div>hello world</div>
                 </section>
                 <Footer />
             </div>
@@ -27,4 +21,4 @@ class About extends React.Component {
     }
 }
 
-module.exports = About;
+module.exports = News;

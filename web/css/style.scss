@@ -153,14 +153,11 @@ ul li,ol li{
         padding: 7px 0;
         border: 1px dashed #d2d0d0;
         border-style: none none solid none;
-        margin-bottom: 50px;
        .news-time{
             float: right;
-             color:rgb(122,122,122);
     }
         .news-title{
             float:left;
-            color:rgb(102,102,102);
         }  
     }      
 }
@@ -205,43 +202,17 @@ ul li,ol li{
         padding: 3px 0 0 15px;
     }
 }
+.item-launcher{
     .line{
         position: relative;
         margin: 0 auto;
         max-width: 960px;
         min-width: 480px;
         padding:90px 0;
-        span{
-            font-family: 'Microsoft YaHei', 微软雅黑,sans-serif;
-            font-weight: 300px;
-            font-size: 18px;
-            color:rgb(102,102,102);
-        }
-        a{
-            font-family: 'Microsoft YaHei', 微软雅黑,sans-serif;
-            font-weight: 00px;
-            font-size: 18px;
-        }
+
         .line-text{
             margin: 20px 0 0 100px;
             width: 50%;
-        }
-        .line-joinus{
-            h4{
-                font-family: 'Microsoft YaHei', 微软雅黑,sans-serif;
-                font-weight: 600px;
-                font-size: 18px;
-                color:rgb(102,102,102);
-                line-height: 40px;
-            }
-            p{
-                margin-top: 0;
-                line-height: 30px;
-                font-size: 18px;
-                font-family: 'Microsoft YaHei', 微软雅黑,sans-serif;
-                font-weight: 300;
-
-            }
         }
 
         .left{
@@ -254,6 +225,7 @@ ul li,ol li{
             width: 300px;
             height: 360px;
         }
+    }
 }
 
 .footer{
@@ -300,18 +272,3 @@ ul li,ol li{
         }
     }
 }
-.about{
-    .about-title{
-        font-family: 'Microsoft YaHei', 微软雅黑,sans-serif;
-        font-weight: 600px;
-        color:deeppink;
-        font-size: 50px;
-        font-style: bold;
-        float: left;
-    }
-    p{
-        font-size: 28px;
-        color: rgb(68,68,68);
-    }
-}
-

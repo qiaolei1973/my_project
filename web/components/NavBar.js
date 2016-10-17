@@ -67,6 +67,7 @@ class NavBarItems extends React.Component {
             <div className="navbar-right">
                 <ul className="nav navbar-nav ">
                     <li className='nav-link'><a href="#ad-carousel">综述</a></li>
+                    <li className='nav-link'><a href="#summary-container">简述</a></li>
                     <li className="dropdown nav-link">
                         <a href="#" className="dropdown-toggle" data-toggle="dropdown">产品 <span className="caret"></span></a>
                         <ul className="dropdown-menu" role="menu">
@@ -74,7 +75,6 @@ class NavBarItems extends React.Component {
                             <li><a href="product2">产品2</a></li>
                         </ul>
                     </li>
-                    <li className='nav-link'><a href="news">新闻</a></li>
                     <li className='nav-link'><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
                 </ul>
             </div>

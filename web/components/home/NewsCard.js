@@ -1,33 +1,20 @@
 import React from 'react';
-import { connect } from "react-redux"
-import { fetchNews } from "../actions/newsActions"
-
-@connect((store) => {
-    return {
-        news: store.news.news,
-        //userFetched: store.user.fetched,
-    };
-})
 //新闻动态
 class NewsCard extends React.Component {
     constructor(prop) {
         super(prop);
     }
-    componentWillMount() {
-        debugger
-        console.log('run in');
-        this.props.dispatch(fetchNews())
-    }
     render() {
-        const {news} = this.props;
         const data = this.props.data;
-        console.log(news);
-        debugger
         return (
-            <div className="line news">
+            <div className="col-md-4 news">
                 <div className='div-title'>
+                    <span>
+                        <a href="news/" title={data.title_cn}>{data.title_cn}</a>
+                    </span>
+                    <b>{data.title_en}</b>
                 </div>
-                <NewsList list={data.items} />
+                <NewsList list={data.items}/>
             </div>
         )
     }
@@ -44,14 +31,14 @@ class NewsList extends React.Component {
             return (
                 <li className={className} key={item.key}>
                     <span className='news-time'>{time}</span>
-                    <a href='/news/article' target='view' className='news-title'>{item.title}</a>
+                    <a href={item.link} target='view' className='news-title'>{item.title}</a>
                 </li>
             )
         }
         return (
             <div className='editor'>
                 <ol>
-                    {this.props.list.map(createNewsList)}
+                    {this.props.list.map(createNewsList) }
                 </ol>
             </div>
         )

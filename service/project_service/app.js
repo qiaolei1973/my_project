@@ -1,19 +1,14 @@
 var express = require('express');
-var path = require('path')
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
 var _ = require('underscore');
-var compression = require('compression')
-var mongoose = require('mongoose');
 
+var mongoose = require('mongoose');
 var Data = require('./models/data');
 
 var port = process.env.PORT || 3000;
 var app = express();
 
-app.use(compression())
-
-app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(serveStatic('node_modules'));
 
@@ -27,34 +22,20 @@ app.listen(port);
 //     }
 //     return vals;
 // })
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'))
-})
-
-app.get('/test', function (req, res) {
+app.get('/test',function(req,res){
     console.log(req.body);
     res.send('hello world');
 })
 
-app.get('/news', function (req, res) {
-    console.log(req.body);
-    res.send({
-        id: 1,
-        title: 2,
-        article: 3,
-        time: 4,
-    });
-})
-
-app.post('/login', function (req, res) {
+app.post('/login',function(req,res){
     var _user = req.body.user;
     var userName = _user.userName;
     var password = _user.password;
     console.log(req.body.user);
-    if (password) {
-        res.send({ status: 0 });
-    } else {
-        res.send({ status: 1 });
+    if(password){
+        res.send({status:0});
+    }else{
+        res.send({status:1});
     }
 })
 
