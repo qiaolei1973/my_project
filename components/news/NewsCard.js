@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from "react-redux"
-import { fetchNews } from "../actions/newsActions"
+import { fetchNews ,addNews} from "../../actions/newsActions"
 
 @connect((store) => {
     return {
         news: store.news.news,
-        //userFetched: store.user.fetched,
+        newsFetched: store.news.fetched,
     };
 })
 //新闻动态
@@ -14,20 +14,17 @@ class NewsCard extends React.Component {
         super(prop);
     }
     componentWillMount() {
-        debugger
-        console.log('run in');
         this.props.dispatch(fetchNews())
     }
     render() {
         const {news} = this.props;
-        const data = this.props.data;
         console.log(news);
         debugger
         return (
             <div className="line news">
                 <div className='div-title'>
                 </div>
-                <NewsList list={data.items} />
+                  <NewsList list={news}/> 
             </div>
         )
     }
@@ -41,6 +38,7 @@ class NewsList extends React.Component {
         var createNewsList = (item, index) => {
             var className = 'list';
             var time = new Date(parseInt(item.time)).toLocaleDateString();
+            var list = this.props.list;
             return (
                 <li className={className} key={item.key}>
                     <span className='news-time'>{time}</span>

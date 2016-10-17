@@ -16,7 +16,6 @@ class Home extends React.Component {
             <div>
                 <NavBar/>
                 <Carousel/>
-                <IndexConent/>
                 <Footer data={Static.Footer}/>
             </div>
         )

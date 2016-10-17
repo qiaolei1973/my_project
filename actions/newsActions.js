@@ -2,7 +2,8 @@ import axios from "axios";
 
 export function fetchNews(){
     return function(dispatch){
-        axios.get("fetchNews")
+        debugger
+        axios.post("/news/fetchNews")
         .then((response) => {
             dispatch({type:"FETCH_NEWS_FULFILLED",payload:response.data})
         })
@@ -12,12 +13,14 @@ export function fetchNews(){
     }
 }
 
-export function addNews(id,text){
+export function addNews(){
     return{
         type:"ADD_NEWS",
         payload:{
-            id,
-            text,
+        id: 1,
+        title: 2,
+        article: 3,
+        time: 4,
         }
     }
 }

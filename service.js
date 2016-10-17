@@ -7,6 +7,7 @@ var compression = require('compression')
 var mongoose = require('mongoose');
 
 var Data = require('./models/data');
+var Static = require('./Static/Static'); 
 
 var port = process.env.PORT || 3000;
 var app = express();
@@ -36,14 +37,10 @@ app.get('/test', function (req, res) {
     res.send('hello world');
 })
 
-app.get('/news', function (req, res) {
+app.post('/news/fetchNews', function (req, res) {
     console.log(req.body);
-    res.send({
-        id: 1,
-        title: 2,
-        article: 3,
-        time: 4,
-    });
+    res.send(Static.Summary.NewsCard.items);
+    debugger
 })
 
 app.post('/login', function (req, res) {

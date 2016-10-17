@@ -10,12 +10,11 @@ class News extends React.Component {
         super(prop);
     }
     render() {
-        const data = Static.Summary.NewsCard;
         return (
             <div>
                 <NavBar />
                 <section>
-                    <NewsCard data={data}/>
+                    <NewsCard/>
                 </section>
                 <Footer />
             </div>

@@ -11,6 +11,7 @@ import Supports from './components/supports/Supports'
 import Questions from './components/supports/Questions'
 import Admin from './components/login/Admin'
 import News from './components/news/News'
+import Layout from './components/Layout'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 require('./scss/style.scss')
 
@@ -28,6 +29,7 @@ render((
             <Route path="/questions" component={Questions} />
             <Route path="/admin" component={Admin} />
             <Route path="/news" component={News} />
+            <Route path="/layout" component={Layout} />
         </Router>
     </Provider>
 ), document.getElementById('app'))

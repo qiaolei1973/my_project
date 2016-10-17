@@ -8,7 +8,7 @@ class NavBar extends React.Component {
     }
     render() {
         return (
-            <div className="navbar navbar-dark navbar-full" role="navigation" id="menu-nav">
+            <div className="navbar navbar-dark navbar-fixed-top" role="navigation" id="menu-nav">
                 <div className="container">
                     <collapseButton />
                     <NavBarHeader />

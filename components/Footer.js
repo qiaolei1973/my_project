@@ -22,7 +22,7 @@ class Footer extends React.Component {
                             <ul className="support">
                                 <li><span>帮助与支持</span></li>
                                 <li><a href="support">支持中心</a></li>
-                                <li><a href="faq-home">常见问题</a></li>
+                                <li><a href="questions">常见问题</a></li>
                                 <li><a href="#" data-toggle="modal" data-target="#signinModal">管理员登陆</a></li>
                             </ul>
                             <ul className="partners">

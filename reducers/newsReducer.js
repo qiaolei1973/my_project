@@ -1,23 +1,17 @@
-export default function reducer(
-    state = {
-        news: {
-            id: null,
-            title: null,
-            article: null,
-            time:null,
-        },
-        fetching: false,
-        fetched: false,
-        error: null,
-    }, action) {
+export default function reducer(state = {
+    news: [],
+    fetching: false,
+    fetched: false,
+    error: null,
+}, action) {
     switch (action.type) {
-        case "FETCH_USER": {
-            return Object.assign({}, state, { fetching: true })
+        case "FETCH_NEWS": {
+            return Object.assign({}, state, { fetching: true ,news:action.payload})
         }
-        case "FETCH_USER_REJECTED": {
+        case "FETCH_NEWS_REJECTED": {
             return Object.assign({}, state, { fetching: false, error: action.payload })
         }
-        case "FETCH_USER_FULFILLED": {
+        case "FETCH_NEWS_FULFILLED": {
             return Object.assign({}, state,
                 {
                     fetching: false,
@@ -25,6 +19,15 @@ export default function reducer(
                     news: action.payload,
                 })
         }
+        case "ADD_NEWS": {
+            debugger
+            return Object.assign({}, state, { news: action.payload });
+            //return a
+        }
+        //     case "ADD_NEWS": {
+        //     var a = 1; 
+        //     return Object.assign({}, state, { news: action.payload })
+        // }
         // case "SET_USER_NAME": {
         //     return {
         //         ...state,

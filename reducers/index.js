@@ -7,4 +7,5 @@ import news from "./newsReducer";
 export default combineReducers({
     tweets,
     user,
+    news,
 })
