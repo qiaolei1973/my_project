@@ -61,16 +61,25 @@ class NavBarHeader extends React.Component {
 class NavBarItems extends React.Component {
     constructor(prop) {
         super(prop);
+        this.state = {  _class: 'hidden dropdown-menu' };
+        this.mouseOver = () => {
+            this.setState({ _class: '_show dropdown-menu' });
+        };
+
+        this.mouseOut = () => {
+            this.setState({ _class: '_hidden dropdown-menu' });
+        };
     }
     render() {
+        var _class = this.state._class;
         return (
             <div className="navbar-right">
                 <ul className="nav navbar-nav ">
                     <li className='nav-link'><a href="#ad-carousel">综述</a></li>
-                    <li className="dropdown nav-link">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">产品 <span className="caret"></span></a>
-                        <ul className="dropdown-menu" role="menu">
-                            <li><a href="product1">公司介绍</a></li>
+                    <li className="dropdown nav-link" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+                        <a href="#" >产品 </a>
+                        <ul className={_class}>
+                            <li><a href="product1">产品1</a></li>
                             <li><a href="product2">产品2</a></li>
                         </ul>
                     </li>
