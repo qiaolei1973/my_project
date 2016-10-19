@@ -18,30 +18,59 @@ ul li,ol li{
         padding-top: 15px;
         box-shadow: 1px 1px 15px #888888;
         background-color: #fff;
+        .nav-link{
+            padding:0
+        }
         .nav-link>a{
             font-family: 'Microsoft YaHei',微软雅黑, sans-serif;
             font-weight: 580;
             font-size:20px; 
             color: #1c1c1c;
         }
-
-        ._show{
-             opacity: 1;
+        .nav-link>a:hover{
+                background-color: #fff;
+                // border: 1px dashed green;
+                // border-style: none none solid none;
+        }
+        .nav-link>a:visited{
+            background-color: #fff;
+        }
+        .nav-link{
+            position: relative;
         }
 
-       ._hidden{
+        .show1{
+             height: 140px;
+             background-color: #fff;
+        }
+
+       .hidden1{
+           height: 0;
            opacity: 0;
         }
-        .dropdown-menu{
-            transition: all 3s 2s; 
-            border: none;
+        .dropdown-menu1{
+            position: absolute;
+            width: 250px;
+            left:-180px;
+            transition: all 1s; 
+            background-color: #fff;
+            border-radius:0 0 15px 2px;
+            box-shadow: 3px 3px 10px -3px #888888;
+            li{
+                margin: 0;
+                padding: 10px 0; 
+            }
         }
-        .dropdown-menu>li>a{
-            font-size: 15px;
+        .dropdown-menu1>li>a{
+            font-size: 20px;
             line-height: 36px;
-            padding:0 20px;
+            padding:0;
             font-weight: normal;
             color: #888888;
+            text-decoration: none;
+        }
+        .dropdown-menu1>li>a:hover{
+            color:red
         }
     }
     // .navbar-nav > li > a{
