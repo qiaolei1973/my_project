@@ -33,30 +33,6 @@ class NavBarHeader extends React.Component {
     }
 }
 
-class NavBarItemss extends React.Component {
-    constructor(prop) {
-        super(prop);
-    }
-    render() {
-        return (
-            <div className="navbar-collapse collapse">
-                <ul className="nav navbar-nav">
-                    <li className='nav-link'><a href="#ad-carousel">综述</a></li>
-                    <li className='nav-link'><a href="#summary-container">简述</a></li>
-                    <li className="dropdown nav-link">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">产品 <span className="caret"></span></a>
-                        <ul className="dropdown-menu" role="menu">
-                            <li><a className='nav-link' href="product1">公司介绍</a></li>
-                            <li><a href="product2">产品2</a></li>
-                        </ul>
-                    </li>
-                    <li className='nav-link'><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
-                </ul>
-            </div>
-        )
-    }
-}
-
 
 class NavBarItems extends React.Component {
     constructor(prop) {
@@ -79,12 +55,12 @@ class NavBarItems extends React.Component {
                     <li className="dropdown1 nav-link" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
                         <a href="#" >产品 </a>
                         <ul className={_class}>
-                            <li><a href="product1">产品1</a></li>
-                            <li><a href="product2">产品2</a></li>
+                            <li><a href="/product1">产品1</a></li>
+                            <li><a href="/product2">产品2</a></li>
                         </ul>
                     </li>
-                    <li className='nav-link'><a href="news">新闻</a></li>
-                    <li className='nav-link'><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
+                    <li className='nav-link'><a href="/news">新闻</a></li>
+                    <li className='nav-link'><a href="#" data-toggle="modal" data-target="#aboutModal">关于</a></li>
                 </ul>
             </div>
         )

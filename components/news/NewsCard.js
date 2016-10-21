@@ -1,4 +1,5 @@
 import React from 'react';
+import Static from '../../Static/Static';
 import { connect } from "react-redux"
 import { fetchNews ,addNews} from "../../actions/newsActions"
 
@@ -17,9 +18,11 @@ class NewsCard extends React.Component {
         this.props.dispatch(fetchNews())
     }
     render() {
-        const {news} = this.props;
-        console.log(news);
-        debugger
+        let {news} = this.props;
+        if(!news.length){
+            news = Static.News.items;
+        }
+        sessionStorage.setItem('news',JSON.stringify(news));
         return (
             <div className="line news">
                 <div className='div-title'>
@@ -36,22 +39,22 @@ class NewsList extends React.Component {
     }
     render() {
         var createNewsList = (item, index) => {
-            var className = 'list';
-            var time = new Date(parseInt(item.time)).toLocaleDateString();
-            var list = this.props.list;
+            const className = 'list';
+            const time = new Date(parseInt(item.time)).toLocaleDateString();
+            const list = this.props.list;
+            const id = item.id;
+            const href = '/news/' + id;
             return (
                 <li className={className} key={item.key}>
                     <span className='news-time'>{time}</span>
-                    <a href='/news/article' target='view' className='news-title'>{item.title}</a>
+                    <a href={href} target='view' className='news-title'>{item.title}</a>
                 </li>
             )
         }
         return (
-            <div className='editor'>
                 <ol>
                     {this.props.list.map(createNewsList)}
                 </ol>
-            </div>
         )
     }
 }

@@ -2,7 +2,6 @@ import axios from "axios";
 
 export function fetchNews(){
     return function(dispatch){
-        debugger
         axios.post("/news/fetchNews")
         .then((response) => {
             dispatch({type:"FETCH_NEWS_FULFILLED",payload:response.data})

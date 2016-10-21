@@ -1,5 +1,6 @@
 import React from 'react';
-import Login from './login/Login'
+import AdminModal from './modal/AdminModal'
+import AboutModal from './modal/AboutModal';
 //新闻动态
 class Footer extends React.Component {
     constructor(prop) {
@@ -14,16 +15,16 @@ class Footer extends React.Component {
                         <div className='link'>
                             <ul className='about'>
                                 <li><span>关于我们</span></li>
-                                <li><a href="about">公司介绍</a></li>
-                                <li><a href="policy">隐私条款</a></li>
-                                <li><a href="disclaimer">免责声明</a></li>
-                                <li><a href="joinus">加入我们</a></li>
+                                <li><a href="/about">公司介绍</a></li>
+                                <li><a href="/policy">隐私条款</a></li>
+                                <li><a href="/disclaimer">免责声明</a></li>
+                                <li><a href="/joinus">加入我们</a></li>
                             </ul>
                             <ul className="support">
                                 <li><span>帮助与支持</span></li>
-                                <li><a href="support">支持中心</a></li>
-                                <li><a href="questions">常见问题</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#signinModal">管理员登陆</a></li>
+                                <li><a href="/support">支持中心</a></li>
+                                <li><a href="/questions">常见问题</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#signinModal">管理员操作</a></li>
                             </ul>
                             <ul className="partners">
                                 <li><span>互动关注</span></li>
@@ -37,9 +38,8 @@ class Footer extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Login/>
-
-
+                <AdminModal/>
+                 <AboutModal/>
             </section>
         )
     }

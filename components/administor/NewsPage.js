@@ -3,8 +3,10 @@ import React from 'react';
 import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
+import NewsList from './NewsList';
+import NewsModifyModal from '../modal/NewsModifyModal';
 //产品1
-class Admin extends React.Component {
+class NewsPage extends React.Component {
     constructor(prop) {
         super(prop);
     }
@@ -13,7 +15,8 @@ class Admin extends React.Component {
             <div>
                 <NavBar />
                 <section>
-                    <div>hello world</div>
+                <NewsList/>
+                <NewsModifyModal/>
                 </section>
                 <Footer />
             </div>
@@ -21,4 +24,4 @@ class Admin extends React.Component {
     }
 }
 
-module.exports = Admin;
+module.exports = NewsPage;
