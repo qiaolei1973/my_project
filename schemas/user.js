@@ -3,11 +3,15 @@ var mongoose = require('mongoose')
 
 var SALT_WORK_FACTOR = 10;
 
-var DataSchema = new mongoose.Schema({
-    data1: String,
-    data2: String,
-    data3: String,
-    year: Number,
+var UserSchema = new mongoose.Schema({
+    name: {
+        unique: true,
+        type: String
+    },
+    password: {
+        unique: false,
+        type: String
+    },
     meta: {
         createAt: {
             type: Date,
@@ -20,28 +24,17 @@ var DataSchema = new mongoose.Schema({
     }
 })
 
-DataSchema.pre('save', function (next) {
-    var data = this
+UserSchema.pre('save', function (next) {
+    //var data = this
     if (this.isNew) {
         this.meta.createAt = this.meta.updateAt = Date.now()
     } else {
         this.meta.updateAt = Date.now()
     }
-
-    // bcrypt.genSalt(SALT_WORK_FACTOR,function(err,salt){
-    //     if(err)return next(err)
-
-    //     bcrypt.hash(data.password,salt,function(err,hash){
-    //         if(err) return next(err)
-
-    //         data.password = hash
-    //     })
-
-    // });
     next();
 })
 
-DataSchema.statics = {
+UserSchema.statics = {
     fetch: function (cb) {
         return this
             .find({})
@@ -49,7 +42,7 @@ DataSchema.statics = {
             .exec(cb);
     },
 
-    findById: function (id,cb) {
+    findById: function (id, cb) {
         return this
             .find({})
             .sort('meta.updateAt')
@@ -57,4 +50,4 @@ DataSchema.statics = {
     }
 }
 
-module.exports = DataSchema;
+module.exports = UserSchema;

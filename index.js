@@ -4,6 +4,7 @@ import { Provider } from "react-redux"
 import store from './store';
 import Home from './components/home/Home'
 import Product1 from './components/product/Product1'
+import Case from './components/case/Case'
 import Product2 from './components/product/Product2'
 import About from './components/about/About'
 import Joinus from './components/about/Joinus'
@@ -30,6 +31,7 @@ render((
             </Route>
             <Route path="/product1" component={Product1} />
             <Route path="/product2" component={Product2} />
+            <Route path="/case" component={Case} />
             <Route path="/about" component={About} />
             <Route path="/joinus" component={Joinus} />
             <Route path="/supports" component={Supports} />

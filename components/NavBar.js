@@ -59,6 +59,7 @@ class NavBarItems extends React.Component {
                             <li><a href="/product2">产品2</a></li>
                         </ul>
                     </li>
+                    <li className='nav-link'><a href="/case">案例</a></li>
                     <li className='nav-link'><a href="/news">新闻</a></li>
                     <li className='nav-link'><a href="#" data-toggle="modal" data-target="#aboutModal">关于</a></li>
                 </ul>
