@@ -5,9 +5,25 @@ import AboutModal from './modal/AboutModal';
 class Footer extends React.Component {
     constructor(prop) {
         super(prop);
+        this.state = {login:false}
+    }
+    componentWillMount(){
+        const user = sessionStorage.getItem('__user__');
+        if(user){
+            this.setState({login:true})
+        }else{
+            this.setState({login:false})
+        }
     }
     render() {
-        const data = this.props.data;
+        const data = this.props.data
+        let login = this.state.login
+        let _dom 
+        if(login){
+            _dom = <li><a href="/admin" >管理员操作</a></li>
+        }else{
+            _dom = <li><a href="#" data-toggle="modal" data-target="#signinModal">管理员操作</a></li>
+        }
         return (
             <section>
                 <div className='footer clear'>
@@ -24,7 +40,7 @@ class Footer extends React.Component {
                                 <li><span>帮助与支持</span></li>
                                 <li><a href="/support">支持中心</a></li>
                                 <li><a href="/questions">常见问题</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#signinModal">管理员操作</a></li>
+                                {_dom}
                             </ul>
                             <ul className="partners">
                                 <li><span>互动关注</span></li>

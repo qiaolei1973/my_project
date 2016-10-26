@@ -1,3 +1,5 @@
+
+
 export default function reducer(state = {
     news: [],
     fetching: false,

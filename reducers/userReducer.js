@@ -11,31 +11,34 @@ export default function reducer(
     }, action) {
     switch (action.type) {
         case "FETCH_USER": {
-            return{...state,fetching:true}
+            return {...state, fetching: true }
         }
         case "FETCH_USER_REJECTED": {
-            return {...state,fetching:false,error:action.payload}
+            return {...state, fetching: false, error: action.payload }
         }
         case "FETCH_USER_FULFILLED": {
             return {
                 ...state,
-                fetching:false,
-                fetched:true,
-                user:action.payload,
+                fetching: false,
+                fetched: true,
+                user: action.payload,
             }
         }
-        case "SET_USER_NAME":{
-            return{
+        case "SET_USER_NAME": {
+            return {
                 ...state,
-                user:{...state.user,name:action.payload}
+                user: {...state.user, name: action.payload }
             }
         }
-         case "SET_USER_AGE":{
-            return{
+        case "SET_USER_AGE": {
+            return {
                  ...state,
-                user:{...state.user,age:action.payload}
+                user: {...state.user, age: action.payload }
             }
         }
+        // case 'LOGOUT': {
+        //     return Object.assign({}, state, { online: false })
+        // }
     }
     return state
 }

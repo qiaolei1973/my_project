@@ -4,7 +4,7 @@ import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
 import NewsList from './NewsList';
-import NewsModifyModal from '../modal/NewsModifyModal';
+import NewsModal from '../modal/NewsModal';
 //产品1
 class NewsPage extends React.Component {
     constructor(prop) {
@@ -16,7 +16,9 @@ class NewsPage extends React.Component {
                 <NavBar />
                 <section>
                 <NewsList/>
-                <NewsModifyModal/>
+                <NewsModal type={'modify'}/>
+                <NewsModal type={'add'}/>
+                <input type='button' className='button  news-add' value='添加' data-toggle="modal"  data-target="#newsAddModal"/>
                 </section>
                 <Footer />
             </div>

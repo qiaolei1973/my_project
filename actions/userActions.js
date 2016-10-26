@@ -1,4 +1,4 @@
-
+import axios from "axios";
 
 export function fetchUser() {
     return {
@@ -23,3 +23,15 @@ export function setUserAge(age) {
         payload: age,
     }
 }
+
+// export function logout() {
+//     return function (dispatch) {
+//         axios.post('/logout')
+//             .then((response) => {
+//                 dispatch({ type: 'LOGOUT', payload: response })
+//             })
+//             .catch((err) => {
+//                 dispatch({ type: 'LOGOUT', payload: err })
+//             })
+//     }
+// }
