@@ -7,22 +7,20 @@ import { fetchNews ,addNews} from "../../actions/newsActions"
     return {
         news: store.news.news,
         newsFetched: store.news.fetched,
-    };
+    }
 })
 //新闻动态
 class NewsCard extends React.Component {
     constructor(prop) {
-        super(prop);
+        super(prop)
     }
     componentWillMount() {
         this.props.dispatch(fetchNews())
+        Util.setCache('news',this.props.news)
     }
     render() {
         let {news} = this.props;
-        if(!news.length){
-            news = Static.News.items;
-        }
-        sessionStorage.setItem('news',JSON.stringify(news));
+        //sessionStorage.setItem('news',JSON.stringify(news));
         return (
             <div className="line news">
                 <div className='div-title'>
@@ -47,7 +45,7 @@ class NewsList extends React.Component {
             return (
                 <li className={className} key={item.key}>
                     <span className='news-time'>{time}</span>
-                    <a href={href} target='view' className='news-title'>{item.title}</a>
+                    <a href={href}  className='news-title'>{item.title}</a>
                 </li>
             )
         }

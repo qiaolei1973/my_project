@@ -5,22 +5,31 @@ import Util from '../../Util/Util';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
 import NewsCard from './NewsCard';
-//产品1
+import { connect } from "react-redux"
+import { getNews } from "../../actions/newsActions"
+import NewsModal from '../modal/NewsModal';
+
+@connect((store) => {
+    return {
+        news: store.news.news
+    }
+})
+//新闻详情页
 class NewsPage extends React.Component {
     constructor(prop) {
         super(prop);
     }
-    render() {
+    componentWillMount() {
         const {id} = this.props.params;
-        const data =JSON.parse(sessionStorage.getItem('news'));
-        let news,time;
-        for (var i = 0; i < data.length; i++) {
-            if(data[i].id === id){
-                news = data[i];
-                time = Util.getDate(news.time);
-                break
-            }
+        this.props.dispatch(getNews(id))
+    }
+    render() {
+        const {news} = this.props
+        debugger
+        if (!news || news instanceof Array) {
+            return (<div></div>)
         }
+        const time = Util.getDate(news.meta.updateAt)
         return (
             <div>
                 <NavBar />

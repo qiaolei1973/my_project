@@ -7,9 +7,10 @@ var compression = require('compression')
 var mongoose = require('mongoose')
 var md5 = require('md5')
 var cookieSession = require('cookie-session')
-
-var Data = require('./models/data')
+//数据模型
+var News = require('./models/news')
 var User = require('./models/user')
+//静态数据
 var Static = require('./Static/Static')
 
 var port = process.env.PORT || 3000
@@ -54,8 +55,40 @@ app.get('/test', function (req, res) {
     res.send('hello world')
 })
 
+//添加新闻
+app.post('/news/addNews', function (req, res) {
+    var _news = req.body
+    News.findOne({ title: _news.title }, function (err, news) {
+        if (err) {
+            console.log(err)
+            return res.send({ status: 2 })
+        }
+        if (news) {
+            return res.send({ status: 1 })
+        }
+        else {
+            var news = new News(_news)
+            news.save(function (err) {
+                if (err) {
+                    console.log(err)
+                    return res.send({ status: 2 })
+                }
+                return res.send({ status: 0 })
+            })
+        }
+    })
+    //res.send(Static.Summary.NewsCard.items)
+})
+
 app.post('/news/fetchNews', function (req, res) {
-    res.send(Static.Summary.NewsCard.items)
+    News.find(function (err, newses) {
+        if (err) {
+            console.log(err)
+            return res.send({ status: 2 })
+        }
+        res.send(newses)
+    })
+    //res.send(Static.Summary.NewsCard.items)
 })
 
 /**
@@ -66,7 +99,7 @@ app.post('/user/__singup', function (req, res) {
     var _user = req.body.user
     console.log(req.body)
     var user = new User(_user)
-    User.find({ name: _user.name }, function (err, user) {
+    user.find({ name: _user.name }, function (err, user) {
         if (err) {
             console.log(err)
         }
@@ -92,18 +125,18 @@ app.post('/login', function (req, res) {
     var name = _user.name
     var password = _user.password
     User.findOne({ name: name }, function (err, user) {
-            console.log(user)
+        console.log(user)
         if (err) {
             console.log(err)
         }
         if (!user) {
-            return res.send({status:1})
+            return res.send({ status: 1 })
         }
         if (user.password === password) {
             req.session.user = user
-            return res.send({status:0})
+            return res.send({ status: 0 })
         }
-        res.send({status:1})
+        res.send({ status: 1 })
     })
 })
 
@@ -112,7 +145,7 @@ app.post('/login', function (req, res) {
  */
 app.post('/logout', function (req, res) {
     delete req.session.user
-    res.send({status:0})
+    res.send({ status: 0 })
 })
 
 console.log('service start' + port)

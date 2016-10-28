@@ -1,42 +1,65 @@
 import axios from "axios";
-
-export function fetchNews(){
-    return function(dispatch){
+import Static from '../Static/Static';
+import Util from '../Util/Util'
+export function fetchNews() {
+    return function (dispatch) {
         axios.post("/news/fetchNews")
-        .then((response) => {
-            dispatch({type:"FETCH_NEWS_FULFILLED",payload:response.data})
-        })
-        .catch((err) => {
-            dispatch({type:"FETCH_NEWS_REJECTED",payload:err})
-        })
+            .then((response) => {
+                const payload = response.data.length ? response.data : Static.News.items
+                dispatch({ type: "FETCH_NEWS_FULFILLED", payload: payload })
+                Util.setCache('news',payload)
+            })
+            .catch((err) => {
+                const payload =  Static.News.items
+               // dispatch({ type: "FETCH_NEWS_REJECTED", payload: err })
+               dispatch({ type: "FETCH_NEWS_FULFILLED", payload: payload })
+               Util.setCache('news',payload)
+            })
     }
 }
 
-export function addNews(){
-    return{
-        type:"ADD_NEWS",
-        payload:{
-        id: 1,
-        title: 2,
-        article: 3,
-        time: 4,
-        }
+export function getNews(id) {
+    const news = Util.getCache('news','_id',id)
+    return {
+        type:"GET_NEWS",
+        payload:news       
     }
 }
 
-export function updateNews(id,text){
-    return{
-        type:"UPDATE_NEWS",
-        payload:{
+export function addNews(news) {
+    return function (dispatch) {
+        axios.post("/news/addNews",news)
+            .then((response) => {
+                const payload = response.data
+                dispatch({ type: "ADD_NEWS_FULFILLED", payload: payload })
+                Util.setCache('news',payload)
+            })
+            .catch((err) => {
+               dispatch({ type: "ADD_NEWS_REJECTED", payload: err })
+            })
+    }
+}
+
+export function updateNews(id, text) {
+    return {
+        type: "UPDATE_NEWS",
+        payload: {
             id,
             text,
         },
     }
 }
 
-export function deleteNews(id){
+export function deleteNews(id) {
     return {
-        type:"DELETE_NEWS",
-        payload:id
+        type: "DELETE_NEWS",
+        payload: id
+    }
+}
+
+export function setCurrentNews(news) {
+    return {
+        type:"SET_CURRENT_NEWS",
+        payload:news
     }
 }
