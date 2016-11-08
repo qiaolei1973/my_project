@@ -4,7 +4,6 @@ var serveStatic = require('serve-static')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 var cookieSession = require('cookie-session')
-
 var port = process.env.PORT || 3000
 var app = express()
 

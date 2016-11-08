@@ -1,10 +1,8 @@
 import React from 'react';
-import Static from '../../Static/Static';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
 import QuestionLine from '../line/QuestionLine';
-import ImgLine from '../line/ImgLine';
-//产品1
+//常见问题
 class Questions extends React.Component {
     constructor(prop) {
         super(prop);
@@ -13,7 +11,6 @@ class Questions extends React.Component {
         return (
             <div>
                 <NavBar />
-                <ImgLine img='ie-big.jpg'/>
                 <QuestionLine/>
                 <Footer />
             </div>

@@ -39,13 +39,13 @@ class NavBarItems extends React.Component {
     constructor(prop) {
         super(prop)
         this.state = { _class: 'hidden1 dropdown-menu1' };
-        this.mouseOver = () => {
-            this.setState({ _class: 'show1 dropdown-menu1' });
-        };
+        // this.mouseOver = () => {
+        //     this.setState({ _class: 'show1 dropdown-menu1' });
+        // };
 
-        this.mouseOut = () => {
-            this.setState({ _class: 'hidden1 dropdown-menu1' });
-        };
+        // this.mouseOut = () => {
+        //     this.setState({ _class: 'hidden1 dropdown-menu1' });
+        // };
     }
     render() {
         let _class = this.state._class
@@ -54,14 +54,14 @@ class NavBarItems extends React.Component {
             const href = '/product/' + item.href
             let key = Util.getGuid()
             return (
-                <li ><a href={href}>{item.name}</a></li>
+                <li key={key}><a href={href}>{item.name}</a></li>
             )
         }
         return (
             <div className="navbar-collapse collapse navbar-right">
                 <ul className="nav navbar-nav ">
                     <li className='nav-link'><a href="/">首页</a></li>
-                    <li className="dropdown1 nav-link" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+                    <li className="dropdown1 nav-link" >
                         <a href="#" className='dropdown-toggle' data-toggle='dropdown'>产品 <span className='caret'></span></a>
                         <ul className='dropdown-menu dropdown-menu1' role='menu'>
                             {product.map(createProductList)}
