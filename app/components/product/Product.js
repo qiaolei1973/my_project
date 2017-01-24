@@ -1,11 +1,10 @@
 import Line from '../line/Line';
 import React from 'react';
 import Static from '../../Static/Static';
-import Util from '../../Util/Util';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
 //产品1
-class Product1 extends React.Component {
+class Product extends React.Component {
     constructor(prop) {
         super(prop);
         this.state = { product: null }
@@ -26,18 +25,18 @@ class Product1 extends React.Component {
                 <div>no such product</div>
             )
         }
-        const createLine = function (item, index) {
-            item.className = index % 2 === 0 ? 'right line-text' : 'left line-text'
-            item.background = index % 2 === 0 ? { background: '#FFF' } : { background: '#f3f3f3' }
-            const key = Util.getGuid()
-            const id = 'product-' + index
-            return <Line data={item} key={key} id={id}/>
-        }
         return (
             <div>
                 <NavBar />
                 <section className='item-launcher'>
-                    {product.items.map(createLine)}
+                    {
+                        product.items.map((item, index) => {
+                            item.className = index % 2 === 0 ? 'right line-text' : 'left line-text'
+                            item.background = index % 2 === 0 ? { background: '#FFF' } : { background: '#f3f3f3' }
+                            const id = 'product_' + index;
+                            return <Line data={item} key={id + '_' + Math.random()} id={id} />
+                        })
+                    }
                 </section>
                 <Footer />
             </div>
@@ -45,4 +44,4 @@ class Product1 extends React.Component {
     }
 }
 
-module.exports = Product1;
+export default Product;

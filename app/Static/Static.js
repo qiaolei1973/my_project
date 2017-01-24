@@ -511,4 +511,4 @@ Static.prototype = {
     ]
 }
 
-module.exports = new Static();
+ export default new Static();

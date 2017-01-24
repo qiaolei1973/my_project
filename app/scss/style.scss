@@ -263,6 +263,9 @@ ul li,ol li{
         max-width: 960px;
         min-width: 480px;
         padding:90px 0;
+        h2{
+            text-align: center;
+        }
         span{
             font-family: 'Microsoft YaHei', 微软雅黑,sans-serif;
             font-weight: 300px;
@@ -357,12 +360,13 @@ ul li,ol li{
     }
 }
 .about{
-    padding-top:30px !important;
+    padding-top:30px;
     .about-title{
         display: block;
         font-size: 25px;
         font-weight: bold;
         padding-bottom:20px;
+        text-align: center;
     }
     p{  
         text-indent: 2em;
