@@ -4,6 +4,7 @@ import EmptyModal from '../modal/EmptyModal';
 class Line extends React.Component {
     constructor(prop) {
         super(prop);
+        var a = 123;
     }
     render() {
         const {data,id} = this.props
