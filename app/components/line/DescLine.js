@@ -10,13 +10,9 @@ class DescLine extends React.Component {
         return (
                 <div className='descline'>
                     <div className='descline-img'>
-                        <center>
                             <img src={path} />
-                        </center>
                         <div className='describe'>
-                            <center>
                                 <span>{data.desc}</span>
-                            </center>
                         </div>
                     </div>
                 </div>
