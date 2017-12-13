@@ -26,6 +26,7 @@ const NavBarItems = () =>
     <div className="navbar-collapse collapse navbar-right">
         <ul className="nav navbar-nav ">
             <li className='nav-link'><a href="/">首页</a></li>
+            <li className='nav-link'><a href="http://iot.xinxiai.cn">关于我们</a></li>
             <li className="dropdown1 nav-link" >
                 <a href="#" className='dropdown-toggle' data-toggle='dropdown'>产品 <span className='caret'></span></a>
                 <ul className='dropdown-menu dropdown-menu1' role='menu'>

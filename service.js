@@ -8,7 +8,7 @@ var port = process.env.PORT || 3000
 var app = express()
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:12345/project')
+mongoose.connect('mongodb://localhost:27017/project')
 app.use(express.static(path.join(__dirname, 'public')))
 //app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
