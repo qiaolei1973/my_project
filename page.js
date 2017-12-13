@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
 
-var port = 80;
+var PORT = 80;
 var app = express();
 
 app.use(express.static(path.join(__dirname, "./public")));
@@ -10,4 +10,4 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT);
-console.log("service start" + port);
+console.log("service start" + PORT);
