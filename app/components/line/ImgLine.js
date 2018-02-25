@@ -8,10 +8,10 @@ class QuestionLine extends React.Component {
     }
     render() {
         const img = this.props.img;
-        const path = 'url(./images/' +　img + ')';
+        const path = 'url(' + img + ')';
         return (
             <section>
-                <div className='img-line' style={{backgroundImage:path}}>
+                <div className='img-line' style={{ backgroundImage: path }}>
                 </div>
             </section>
         )

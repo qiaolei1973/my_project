@@ -1,6 +1,9 @@
 import React from 'react';
 import Static from '../Static/Static';
 import Util from '../Util/Util';
+import { connect } from 'react-redux';
+import { fetchProducts } from '../actions/productAction';
+
 
 const product = Static.Product;
 /** 
@@ -22,27 +25,49 @@ const NavBar = () =>
         </div>
     </div>
 
-const NavBarItems = () =>
-    <div className="navbar-collapse collapse navbar-right">
-        <ul className="nav navbar-nav ">
-            <li className='nav-link'><a href="/">首页</a></li>
-            <li className='nav-link'><a href="http://iot.xinxiai.cn">关于我们</a></li>
-            <li className="dropdown1 nav-link" >
-                <a href="#" className='dropdown-toggle' data-toggle='dropdown'>产品 <span className='caret'></span></a>
-                <ul className='dropdown-menu dropdown-menu1' role='menu'>
-                    {
-                        product.map((item, index) =>
-                            <li key={'product_' + index}>
-                                <a href={'/product/' + item.href}>{item.name}</a>
-                            </li>
-                        )
-                    }
-                </ul>
-            </li>
-            <li className='nav-link'><a href="/case">案例</a></li>
-            <li className='nav-link'><a href="/news">新闻</a></li>
-            <li className='nav-link'><a href="#" data-toggle="modal" data-target="#aboutModal">关于</a></li>
-        </ul>
-    </div>
+@connect((store) => {
+    return {
+        products: store.product.products
+    }
+})
+class NavBarItems extends React.Component {
 
+    componentWillMount() {
+        this.props.dispatch(fetchProducts());
+    }
+
+    render() {
+        const { products } = this.props;
+        return (
+            <div className="navbar-collapse collapse navbar-right">
+                <ul className="nav navbar-nav ">
+                    <li className='nav-link'><a href="/">首页</a></li>
+                    <li className='nav-link'><a href="http://iot.xinxiai.cn">关于我们</a></li>
+                    <li className="dropdown1 nav-link" >
+                        <a href="#" className='dropdown-toggle' data-toggle='dropdown'>产品 <span className='caret'></span></a>
+                        <ul className='dropdown-menu dropdown-menu1' role='menu'>
+                            {
+                                product.map((item, index) =>
+                                    <li key={'product_' + index}>
+                                        <a href={'/product/' + item.href}>{item.name}</a>
+                                    </li>
+                                )
+                            }
+                            {
+                                products.map((item, index) =>
+                                    <li key={'product2_' + index}>
+                                        <a href={'/product/' + item.name}>{item.name}</a>
+                                    </li>
+                                )
+                            }
+                        </ul>
+                    </li>
+                    <li className='nav-link'><a href="/case">案例</a></li>
+                    <li className='nav-link'><a href="/news">新闻</a></li>
+                    <li className='nav-link'><a href="#" data-toggle="modal" data-target="#aboutModal">关于</a></li>
+                </ul>
+            </div>
+        )
+    }
+}
 export default NavBar;

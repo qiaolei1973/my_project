@@ -43,6 +43,7 @@ class Admin extends React.Component {
                                 <div className='col-md-2'></div>
                                 <div className='col-md-8 normal-area'>
                                     <button className='btn btn-primary' type='button'><a href='/admin/news'>新闻管理</a></button>
+                                    <button className='btn btn-primary' type='button'><a href='/admin/products'>产品编辑</a></button>
                                 </div>
                                 <div className='col-md-2'>
                                     <button className='btn btn-default' onClick={this.logout} type='button'>退出登录</button>

@@ -6,7 +6,7 @@ class DescLine extends React.Component {
     }
     render() {
         const {data} = this.props
-        const path = '/images/' + data.path
+        const path =  data.path
         return (
                 <div className='descline'>
                     <div className='descline-img'>

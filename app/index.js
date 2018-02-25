@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 import { render } from 'react-dom'
 import { Provider } from "react-redux"
 import store from './store';
@@ -13,11 +14,12 @@ import Questions from './components/supports/Questions'
 import NewsPage from './components/administor/NewsPage'
 import Admin from './components/administor/Admin'
 import News from './components/news/News'
-import Canvas from './components/canvas/Canvas'
+import ProductsEdit from './components/product/ProductsEdit'
 import NewsPage1 from './components/news/NewsPage'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 require('./scss/style.scss')
 import jQuery from 'jquery';
+import 'antd/dist/antd.css';
 window.jQuery = jQuery;
 window.$ = jQuery;
 
@@ -40,7 +42,7 @@ render((
             <Route path="/admin/news" component={NewsPage} />
             <Route path="/news" component={News} />
             <Route path="/news/:id" component={NewsPage1} />
-            <Route path="/canvas" component={Canvas} />
+            <Route path="/admin/products" component={ProductsEdit} />
         </Router>
     </Provider>
 ), document.getElementById('app'))

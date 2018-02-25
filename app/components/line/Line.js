@@ -9,7 +9,7 @@ class Line extends React.Component {
     render() {
         const {data,id} = this.props
         const {details,params} = data
-        const img = '../images/' + data.img
+        const img = data.img
         const detailsID = id + 'details'
         const paramsID = id + 'params'
         const target_details = '#' + detailsID 

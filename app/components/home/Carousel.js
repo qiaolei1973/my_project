@@ -1,4 +1,5 @@
 import React from 'react';
+import {STATIC} from '../../../config/api';
 
 //轮换广告效果
 class Carousel extends React.Component {
@@ -15,11 +16,11 @@ class Carousel extends React.Component {
         },
             this.items = [{
                 key: this.getGuid(),
-                imgPath: "images/bg1.jpg",
+                imgPath: `${STATIC}/bg1.jpg`,
                 alt: '1',
             }, {
                 key: this.getGuid(),
-                imgPath: "images/bg2.jpg",
+                imgPath: `${STATIC}/bg2.jpg`,
                 alt: '2',
             }
             ];

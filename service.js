@@ -4,14 +4,17 @@ var serveStatic = require('serve-static')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 var cookieSession = require('cookie-session')
+var cors = require('cors')
 var port = process.env.PORT || 3000
 var app = express()
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/project')
+app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')))
-//app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ limit:"3000kb"}));
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(serveStatic('node_modules'))
 
 //用户持久化模块引入
