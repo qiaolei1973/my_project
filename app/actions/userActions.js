@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BACK } from '../../config/api';
 
 export function fetchUser() {
     return {
@@ -24,14 +25,14 @@ export function setUserAge(age) {
     }
 }
 
-// export function logout() {
-//     return function (dispatch) {
-//         axios.post('/logout')
-//             .then((response) => {
-//                 dispatch({ type: 'LOGOUT', payload: response })
-//             })
-//             .catch((err) => {
-//                 dispatch({ type: 'LOGOUT', payload: err })
-//             })
-//     }
-// }
+export function logout() {
+    return function (dispatch) {
+        axios.post(`${BACK}/logout`)
+            .then((response) => {
+                dispatch({ type: 'LOGOUT', payload: response })
+            })
+            .catch((err) => {
+                dispatch({ type: 'LOGOUT', payload: err })
+            })
+    }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from "axios";
 import md5 from "md5";
+import { BACK } from '../../config/api';
+
 //新闻动态
 class AdminModal extends React.Component {
     constructor(prop) {
@@ -9,7 +11,7 @@ class AdminModal extends React.Component {
             const name = document.getElementsByName('user[name]')[0].value
             let password = document.getElementsByName('user[password]')[0].value
             password = md5(password)
-            axios.post('/login', {
+            axios.post(`${BACK}/login`, {
                 name: name,
                 password: password
             })

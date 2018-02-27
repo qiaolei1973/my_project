@@ -3,6 +3,7 @@ import NavBar from '../NavBar'
 import Footer from '../Footer'
 import { connect } from "react-redux"
 import { logout } from "../../actions/userActions"
+import { BACK } from '../../config/api';
 import axios from "axios"
 
 // @connect((store) => {
@@ -16,7 +17,7 @@ class Admin extends React.Component {
     constructor(prop) {
         super(prop);
         this.logout = () => {
-            axios.post('/logout')
+            axios.post(`${BACK}/logout`)
                 .then((response) => {
                     if (response.data.status === 0) {
                         sessionStorage.removeItem('__user__');
