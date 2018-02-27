@@ -15,6 +15,7 @@ module.exports = function (app) {
 
     app.post('/product/addProduct', Product.add)
     app.post('/product/addImage', Product.addImageById)
+    app.post('/cacheImage', Product.cacheImage)
     app.post('/product/fetchProducts', Product.fetch)
     app.post('/product/updateProduct', Product.update)
     app.post('/product/delProduct', Product.del)

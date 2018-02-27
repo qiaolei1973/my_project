@@ -7,7 +7,6 @@ import DemoPic from './DemoPic';
 import { fetchProducts, addProduct, updateProduct } from '../../actions/productAction';
 import './style.scss';
 
-const Textarea = Input.Textarea;
 const FormItem = Form.Item;
 class EditForm extends React.Component {
   state = {
@@ -148,7 +147,9 @@ class EditForm extends React.Component {
         >
           {getFieldDecorator('content', {
             initialValue: record ? record.content : '',
-          })(<Input />)}
+          })(<Input type="textarea"
+            autosize={{ minRows: 12 }}
+            onChange={this.textareaChange} />)}
         </FormItem>
         {formItems}
         <FormItem {...formItemLayoutWithOutLabel}>
@@ -228,7 +229,7 @@ export default class extends React.Component {
   }
 
   @autobind
-  handleBack(){
+  handleBack() {
     location.href = '/admin';
   }
 

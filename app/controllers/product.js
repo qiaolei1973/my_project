@@ -1,6 +1,7 @@
 const _ = require('underscore');
 const Product = require('../models/product')
 const md5 = require('md5')
+const fs = require('fs');
 const path = require('path');
 const qiniu = require('qiniu');
 const multer = require('multer');
@@ -122,6 +123,16 @@ exports.addImageById = function (req, res) {
                 console.log(respBody);
             }
         });
+    })
+}
+exports.cacheImage = function (req, res) {
+    upload(req, res, err => {
+        const { file: { path,originalname }} = req;
+        let newPath = path.split('/');
+        newPath[newPath.length - 1] = originalname;
+        newPath = newPath.join('/');
+        console.log('newPath: ', newPath);
+        fs.rename(path,newPath);
     })
 }
 

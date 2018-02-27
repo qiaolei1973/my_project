@@ -71,6 +71,7 @@
     "http-errors": "^1.5.0",
     "http-server": "^0.8.5",
     "i": "^0.3.6",
+    "image-compressor.js": "^1.1.0",
     "inherits": "^2.0.3",
     "ipaddr.js": "^1.1.1",
     "isarray": "^1.0.0",
