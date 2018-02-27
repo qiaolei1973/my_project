@@ -1,7 +1,8 @@
 var webpack = require('webpack')
+var Visualizer = require('webpack-visualizer-plugin')
 
 module.exports = {
-  devtool: 'eval-source-map',
+  // devtool: 'eval-source-map',
   entry: './app/index.js',
 
   output: {
@@ -10,11 +11,10 @@ module.exports = {
     path: 'public',
   },
 
-  // plugins: process.env.NODE_ENV === 'production' ? [
-  //   new webpack.optimize.DedupePlugin(),
-  //   new webpack.optimize.OccurrenceOrderPlugin(),
-  //   new webpack.optimize.UglifyJsPlugin()
-  // ] : [],
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+    new Visualizer(),
+  ],
 
   module: {
     loaders: [

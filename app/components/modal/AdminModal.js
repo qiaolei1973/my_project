@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import md5 from "md5";
-import { BACK } from '../../config/api';
+import { BACK } from '../../../config/api';
 
 //新闻动态
 class AdminModal extends React.Component {
