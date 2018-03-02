@@ -1,5 +1,6 @@
 import React from 'react';
 import { Upload, Icon, Modal } from 'antd';
+import { BACK } from '../../../config/api'
 
 export default class DemoPic extends React.Component {
     state = {
@@ -43,7 +44,7 @@ export default class DemoPic extends React.Component {
             <div className="clearfix">
                 <Upload
                     data={{ _id }}
-                    action="http://localhost:3000/product/addImage"
+                    action={`${BACK}/product/addImage`}
                     listType="picture-card"
                     fileList={fileList}
                     onPreview={this.handlePreview}

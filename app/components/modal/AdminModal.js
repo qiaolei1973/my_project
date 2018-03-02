@@ -10,7 +10,7 @@ class AdminModal extends React.Component {
         this.click = () => {
             const name = document.getElementsByName('user[name]')[0].value
             let password = document.getElementsByName('user[password]')[0].value
-            password = md5(password)
+            // password = md5(password)
             axios.post(`${BACK}/login`, {
                 name: name,
                 password: password

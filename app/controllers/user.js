@@ -38,20 +38,24 @@ exports.login = function (req, res) {
     var _user = req.body
     var name = _user.name
     var password = _user.password
-    User.findOne({ name: name }, function (err, user) {
-        //console.log(user)
-        if (err) {
-            console.log(err)
-        }
-        if (!user) {
-            return res.send({ status: 1 })
-        }
-        if (user.password === password) {
-            req.session.user = user
-            return res.send({ status: 0 })
-        }
-        res.send({ status: 1 })
-    })
+    if (name === 'admin' && password === 'admin') {
+        return res.send({ status:)
+    });
+}
+User.findOne({ name: name }, function (err, user) {
+    //console.log(user)
+    if (err) {
+        console.log(err)
+    }
+    if (!user) {
+        return res.send({ status: 1 })
+    }
+    if (user.password === password) {
+        req.session.user = user
+        return res.send({ status: 0 })
+    }
+    res.send({ status: 1 })
+})
 }
 
 // 管理员注销

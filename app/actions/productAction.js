@@ -1,6 +1,9 @@
 import axios from "axios";
 import { BACK } from '../../config/api';
 
+const fetch = `${BACK}/product/fetchProducts`;
+console.log('fetch: ', fetch);
+
 export function fetchProducts() {
     return function (dispatch) {
         axios.post(`${BACK}/product/fetchProducts`)
