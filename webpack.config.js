@@ -13,7 +13,7 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
-    new Visualizer(),
+    // new Visualizer(),
   ],
 
   module: {
